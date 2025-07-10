@@ -18,21 +18,13 @@ public class WebDriverManagerSingleton {
     // Method to get the WebDriver instance for the current thread
     public static WebDriver getDriver(String browser) {
         if (threadLocalDriver.get() == null) {
-            WebDriver driver;
+            WebDriver driver = switch (browser.toLowerCase()) {
+                case "chrome" -> new ChromeDriver();
+                case "firefox" -> new FirefoxDriver();
+                case "edge" -> new EdgeDriver();
+                default -> throw new IllegalArgumentException("Unsupported browser: " + browser);
+            };
 
-            switch (browser.toLowerCase()) {
-                case "chrome":
-                    driver = new ChromeDriver();
-                    break;
-                case "firefox":
-                    driver = new FirefoxDriver();
-                    break;
-                case "edge":
-                    driver = new EdgeDriver();
-                    break;
-                default:
-                    throw new IllegalArgumentException("Unsupported browser: " + browser);
-            }
             threadLocalDriver.set(driver);
         }
         return threadLocalDriver.get();
