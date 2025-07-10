@@ -30,5 +30,6 @@ public class Main {
                 "Five", "FiveV"));
         ArrayList<String> listOfValues = new ArrayList<>(Arrays.asList("TwoV", "ThreeV"));
         System.out.println(FindKeysByValuesHashMap.findKeysByValues(hashMap, listOfValues));
+        System.out.println(FindKeysByValuesHashMap.findKeysByValuesOptimized(hashMap, listOfValues));
     }
 }
