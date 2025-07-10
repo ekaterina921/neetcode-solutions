@@ -1,9 +1,7 @@
 package solutions.randomTasks;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class FindKeysByValuesHashMap {
     public static <T, U> ArrayList<T> findKeysByValues(HashMap<T, U> hashMap, ArrayList<U> values) {
@@ -30,6 +28,13 @@ public class FindKeysByValuesHashMap {
                 }
             }
             return keys;
+        }
+
+        public static <T, U> ArrayList<T> findKeysByValuesStreams(HashMap <T, U> hashMap, ArrayList <U> values) {
+        HashSet<U> valueSet = new HashSet<>(values);
+        return hashMap.entrySet().stream()
+                .filter(entry -> valueSet.contains(entry.getValue()))
+                .map(Map.Entry::getKey).collect(Collectors.toCollection(ArrayList::new));
         }
     }
 
