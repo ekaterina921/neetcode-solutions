@@ -3,11 +3,11 @@ package org.example;
 import solutions.arrays.DuplicatesInArrays;
 import solutions.arrays.TwoSumArrays;
 import solutions.arrays.ValidAnagramArrays;
+import solutions.binarySearch.BinarySearchTest;
 import solutions.randomTasks.FindKeysByValuesHashMap;
 import solutions.slidingWindow.BestTimeToBuyAndSellStock;
 import solutions.twoPointers.ValidPalindromeTwoPointers;
 
-import javax.swing.plaf.basic.BasicEditorPaneUI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -17,11 +17,12 @@ import java.util.Map;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-//        System.out.println((new DuplicatesInArrays()).hasDuplicate(new int[]{23, 23, 45}));
-//        System.out.println(ValidAnagramArrays.isAnagram("ccbc", "bbcc"));
-//        System.out.println(Arrays.toString(TwoSumArrays.twoSumImprovedComplexity(new int[]{2, 3, 4}, 5)));
-//        System.out.println(ValidPalindromeTwoPointers.isPalindrome(".,"));
-//        System.out.println(BestTimeToBuyAndSellStock.findBestTimeToBuyAndSellStock(new int[]{1, 3, 5}));
+        System.out.println((new DuplicatesInArrays()).hasDuplicate(new int[]{23, 23, 45}));
+        System.out.println(ValidAnagramArrays.isAnagram("ccbc", "bbcc"));
+        System.out.println(BinarySearchTest.searchTest(new int[]{1, 2, 4, 6, 8}, 4));
+        System.out.println(Arrays.toString(TwoSumArrays.twoSumImprovedComplexity(new int[]{2, 3, 4}, 5)));
+        System.out.println(ValidPalindromeTwoPointers.isPalindrome(".,"));
+        System.out.println(BestTimeToBuyAndSellStock.findBestTimeToBuyAndSellStock(new int[]{1, 3, 5}));
         HashMap<String, String> hashMap = new HashMap<> (Map.of(
                 "One", "OneV",
                 "Two", "TwoV",
