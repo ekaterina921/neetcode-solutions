@@ -1,5 +1,7 @@
 package solutions.binarySearch;
 
+import java.util.Arrays;
+
 public class BinarySearchTest {
     public static int searchTest(int[] numbers, int target) {
         int leftPointer = 0, rightPointer = numbers.length - 1;
@@ -14,5 +16,10 @@ public class BinarySearchTest {
             }
         }
         return -1;
+    }
+
+    public static int searchArraysTest(int [] numbers, int target) {
+        int index = Arrays.binarySearch(numbers, target);
+        return (index >= 0) ? index : -1;
     }
 }
