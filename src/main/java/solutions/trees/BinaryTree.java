@@ -11,6 +11,7 @@ public class BinaryTree {
         this.rightNode = right;
         this.leftNode = left;
     }
+// Depth first search; Time complexity = O(n); Space complexity = O(n)
 
     public static BinaryTree invertTree (BinaryTree root) {
         if (root == null){
