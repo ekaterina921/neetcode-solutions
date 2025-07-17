@@ -25,15 +25,6 @@ public class Main {
 //        System.out.println(Arrays.toString(TwoSumArrays.twoSumImprovedComplexity(new int[]{2, 3, 4}, 5)));
 //        System.out.println(ValidPalindromeTwoPointers.isPalindrome(".,"));
 //        System.out.println(BestTimeToBuyAndSellStock.findBestTimeToBuyAndSellStock(new int[]{1, 3, 5}));
-        HashMap<String, String> hashMap = new HashMap<> (Map.of(
-                "One", "OneV",
-                "Two", "TwoV",
-                "Three", "ThreeV",
-                "Four", "FourV",
-                "Five", "FiveV"));
-        ArrayList<String> listOfValues = new ArrayList<>(Arrays.asList("TwoV", "ThreeV"));
-        System.out.println(FindKeysByValuesHashMap.findKeysByValues(hashMap, listOfValues));
-        System.out.println(FindKeysByValuesHashMapTest.findKeysByValues(hashMap, listOfValues));
 //        Integer[] treeValues = {1, 2, 3, null, null, 4};
 //        BinaryTree binaryTree = new BinaryTree().buildTree(treeValues);
 //        System.out.println(BinaryTree.maxDepthBFS(binaryTree));
