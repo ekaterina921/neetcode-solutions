@@ -81,7 +81,7 @@ public class BinaryTree {
         return level;
     }
 
-    public int maxDepthDFS(BinaryTree root) {
+    public static int maxDepthDFS(BinaryTree root) {
         Stack<Map.Entry<BinaryTree, Integer>> stack = new Stack<>();
         stack.push(new AbstractMap.SimpleImmutableEntry<>(root, 1));
         int res = 0;
@@ -99,5 +99,21 @@ public class BinaryTree {
         }
 
         return res;
+    }
+
+    public static int diameterOfTreeDFS(BinaryTree root){
+        int[] res = new int[1];
+        dfs(root, res);
+        return res[0];
+    }
+
+    private static int dfs(BinaryTree root, int[] res){
+        if(root == null){
+            return 0;
+        }
+        int left = dfs(root.leftNode, res);
+        int right = dfs(root.rightNode, res);
+        res[0] = Math.max(res[0], left + right);
+        return 1 + Math.max(left, right);
     }
 }
