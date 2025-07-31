@@ -6,6 +6,7 @@ import solutions.arrays.ValidAnagramArrays;
 import solutions.binarySearch.BinarySearchTest;
 import solutions.randomTasks.FindKeysByValuesHashMap;
 import solutions.randomTasks.FindKeysByValuesHashMapTest;
+import solutions.randomTasks.ReversingWords;
 import solutions.slidingWindow.BestTimeToBuyAndSellStock;
 import solutions.trees.BinaryTree;
 import solutions.twoPointers.ValidPalindromeTwoPointers;
@@ -28,5 +29,6 @@ public class Main {
 //        Integer[] treeValues = {1, 2, 3, null, null, 4};
 //        BinaryTree binaryTree = new BinaryTree().buildTree(treeValues);
 //        System.out.println(BinaryTree.maxDepthBFS(binaryTree));
+        System.out.println(ReversingWords.reverseWordByWord1("lazy dog."));
     }
 }
