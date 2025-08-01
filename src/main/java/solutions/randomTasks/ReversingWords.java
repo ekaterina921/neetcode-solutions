@@ -1,10 +1,18 @@
 package solutions.randomTasks;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class ReversingWords {
     public static String reverseWholeString(final String original) {
         return new StringBuilder(original).reverse().toString();
     }
-
+    public static String reverseWordByWord2(final String original){
+        return
+                Arrays.stream(original.split("(?<=\\s)|(?=\\s+)"))
+                .map(str -> new StringBuilder(str).reverse().toString())
+                .collect(Collectors.joining());
+    }
     public static String reverseWordByWord1(final String original) {
         StringBuilder reversedString = new StringBuilder();
         var res = original.split(" ");
