@@ -4,12 +4,13 @@ public class Vowels {
 
         public static int getCount(String str) {
             int counter = 0;
-            for (int i = 0; i < str.length(); i++) {
-                char ch = str.charAt(i);
-                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-                    counter++;
-                }
+            for (char ch : str.toCharArray()) {
+               counter += (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') ? 1: 0;
             }
             return counter;
         }
+
+    public static int getCountRegex(String str) {
+        return str.replaceAll("(?i)[^aeiou]", "").length();
+    }
 }
