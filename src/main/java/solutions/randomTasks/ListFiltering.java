@@ -61,5 +61,18 @@ public class ListFiltering {
         }
         return headToReturn;
     }
+
+    public <T> Node<T> filterLinkedListTwoVariables(Node<T> head, Predicate<T> p){
+            Node<T> newHead = new Node<>(null);
+            Node<T> current = newHead;
+            while(head != null){
+                if(p.test(head.data)){
+                    current.next = new Node<T>(head.data);
+                    current = current.next;
+                }
+                head = head.next;
+            }
+            return newHead.next;
+    }
     }
 }
