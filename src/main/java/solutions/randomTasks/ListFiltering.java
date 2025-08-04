@@ -1,7 +1,9 @@
 package solutions.randomTasks;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.function.Function;
 
 public class ListFiltering {
     public static List<Object> filterList(final List<Object> list){
@@ -16,5 +18,13 @@ public class ListFiltering {
             }
         }
         return filteredList;
+    }
+
+    public static <T,R> Object[][] gridMap(Function<T,R> fn, T[][] list) {
+        return Arrays.stream(list)
+                .map(innerArray -> Arrays.stream(innerArray)
+                                .map(fn)
+                                .toArray()
+                ).toArray(Object[][]::new);
     }
 }
