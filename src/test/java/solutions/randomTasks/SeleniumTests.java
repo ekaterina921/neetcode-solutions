@@ -8,8 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.List;
-
 
 public class SeleniumTests {
 
