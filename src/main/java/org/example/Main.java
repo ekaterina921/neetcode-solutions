@@ -6,6 +6,7 @@ import solutions.arrays.ValidAnagramArrays;
 import solutions.binarySearch.BinarySearchTest;
 import solutions.randomTasks.FindKeysByValuesHashMap;
 import solutions.randomTasks.FindKeysByValuesHashMapTest;
+import solutions.randomTasks.FoodDistribution;
 import solutions.randomTasks.ReversingWords;
 import solutions.slidingWindow.BestTimeToBuyAndSellStock;
 import solutions.trees.BinaryTree;
@@ -29,6 +30,7 @@ public class Main {
 //        Integer[] treeValues = {1, 2, 3, null, null, 4};
 //        BinaryTree binaryTree = new BinaryTree().buildTree(treeValues);
 //        System.out.println(BinaryTree.maxDepthBFS(binaryTree));
-        System.out.println(ReversingWords.reverseWordByWord2("lazy dog."));
+//        System.out.println(ReversingWords.reverseWordByWord2("lazy dog."));
+        var r = FoodDistribution.beggars1(new int[]{1, 2, 3, 4, 5, 6}, 3);
     }
 }
