@@ -1,7 +1,6 @@
 package solutions.randomTasks;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.Assert;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.List;
+
 
 public class SeleniumTests {
 
@@ -30,11 +30,12 @@ public class SeleniumTests {
         driver.quit();
     }
 
+    @DisplayName("Verify the number of buttons on the landing page of selenium website")
     @Test
     public void simpleSeleniumTest1() throws InterruptedException {
         driver.navigate().to("https://www.selenium.dev/");
-        driver.findElement(By.className("selenium-button")).click();
-        Assertions.assertTrue(true);
+        int numberOfButtons = driver.findElements(By.className("selenium-button")).size();
+        Assertions.assertEquals(5, numberOfButtons, String.format("The Actual number of buttons is %s. The expected number is 5.", numberOfButtons));
     }
 
     @Test
