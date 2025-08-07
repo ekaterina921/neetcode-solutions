@@ -1,4 +1,5 @@
 package solutions.randomTasks;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,26 +8,46 @@ import java.util.stream.Collectors;
 import java.util.function.Function;
 
 public class ListFiltering {
-    public static List<Object> filterList(final List<Object> list){
+    public static List<Object> filterList(final List<Object> list) {
         return list.stream().filter(s -> s instanceof Integer).collect(Collectors.toList());
     }
 
-    public static List<Object> filterList1(final List<Object> list){
+    public static List<Object> filterList1(final List<Object> list) {
         List<Object> filteredList = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
-            if(list.get(i) instanceof Integer){
+            if (list.get(i) instanceof Integer) {
                 filteredList.add(list.get(i));
             }
         }
         return filteredList;
     }
 
-    public static <T,R> Object[][] gridMap(Function<T,R> fn, T[][] list) {
+    public static <T, R> Object[][] gridMap(Function<T, R> fn, T[][] list) {
         return Arrays.stream(list)
                 .map(innerArray -> Arrays.stream(innerArray)
-                                .map(fn)
-                                .toArray()
+                        .map(fn)
+                        .toArray()
                 ).toArray(Object[][]::new);
+    }
+
+    public static int countSheep(Boolean[] arrayOfSheep) {
+        return (int) Arrays.stream(arrayOfSheep).filter(s -> s != null && s).count();
+    }
+
+    public int sum(List<?> mixed) {
+        return mixed.stream().mapToInt(e -> {
+            if (e instanceof String) {
+                return Integer.parseInt((String) e);
+            } else {
+                return (Integer) e;
+            }
+        }).sum();
+    }
+
+    public int sum1(List<?> mixed){
+        return mixed.stream()
+                .mapToInt(o -> Integer.parseInt(o.toString()))
+                .reduce(0, Integer::sum);
     }
 
     class Node<T> {
@@ -43,12 +64,12 @@ public class ListFiltering {
         }
 
 
-    public <T> Node<T> filterLinkedList(Node<T> head, Predicate<T> p){
+        public <T> Node<T> filterLinkedList(Node<T> head, Predicate<T> p) {
             Node<T> current = head;
             Node<T> headToReturn = null;
             Node<T> newTail = null;
-            while(current != null) {
-                if(p.test(current.data)) {
+            while (current != null) {
+                if (p.test(current.data)) {
                     if (headToReturn == null) {
                         headToReturn = new Node<T>(current.data);
                         newTail = headToReturn;
@@ -58,21 +79,21 @@ public class ListFiltering {
                     }
                 }
                 current = current.next;
+            }
+            return headToReturn;
         }
-        return headToReturn;
-    }
 
-    public <T> Node<T> filterLinkedListTwoVariables(Node<T> head, Predicate<T> p){
+        public <T> Node<T> filterLinkedListTwoVariables(Node<T> head, Predicate<T> p) {
             Node<T> newHead = new Node<>(null);
             Node<T> current = newHead;
-            while(head != null){
-                if(p.test(head.data)){
+            while (head != null) {
+                if (p.test(head.data)) {
                     current.next = new Node<T>(head.data);
                     current = current.next;
                 }
                 head = head.next;
             }
             return newHead.next;
-    }
+        }
     }
 }
