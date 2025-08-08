@@ -1,5 +1,6 @@
 package solutions.arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,6 +23,15 @@ public class DuplicatesInArrays {
             numsWithoutDuplicates.add(num);
         }
         return false;
+    }
+
+    public static int[] distinct(int[] array){
+        return Arrays.stream(array).distinct().toArray();
+    }
+
+    public static ArrayList<Integer> distinct1(ArrayList<Integer> arrayList){
+        HashSet<Integer> hasSet = new HashSet<>(arrayList);
+        return new ArrayList<>(hasSet);
     }
 }
 
