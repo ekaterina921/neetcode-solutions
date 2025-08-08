@@ -1,5 +1,9 @@
 package org.example;
 
+import OOP.AbstractClass;
+import OOP.InterfaceForTest;
+import OOP.SuccessorA1;
+import OOP.SuccessorA2;
 import solutions.arrays.DuplicatesInArrays;
 import solutions.arrays.TwoSumArrays;
 import solutions.arrays.ValidAnagramArrays;
@@ -31,6 +35,10 @@ public class Main {
 //        BinaryTree binaryTree = new BinaryTree().buildTree(treeValues);
 //        System.out.println(BinaryTree.maxDepthBFS(binaryTree));
 //        System.out.println(ReversingWords.reverseWordByWord2("lazy dog."));
-        var r = FoodDistribution.beggars1(new int[]{1, 2, 3, 4, 5, 6}, 3);
+//        var r = FoodDistribution.beggars1(new int[]{1, 2, 3, 4, 5, 6}, 3);
+        InterfaceForTest interfaceForTest = new SuccessorA2();
+        interfaceForTest.walk();
+        AbstractClass abstractClass = new SuccessorA1(1);
+        abstractClass.fly();
     }
 }

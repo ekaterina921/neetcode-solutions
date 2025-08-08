@@ -10,4 +10,8 @@ public class SuccessorA1 extends AbstractClass{
     public void fly() {
         System.out.println("A concrete flight");;
     }
+
+    public void explore(){
+        System.out.println("I am exploring");
+    }
 }
