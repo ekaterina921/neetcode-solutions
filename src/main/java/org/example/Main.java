@@ -40,5 +40,6 @@ public class Main {
         interfaceForTest.walk();
         AbstractClass abstractClass = new SuccessorA1(1);
         abstractClass.fly();
+        System.out.println(abstractClass.str);
     }
 }

@@ -2,6 +2,7 @@ package OOP;
 
 public class SuccessorA1 extends AbstractClass{
     Integer varA1;
+    public String str = "I am a successor of abstract class";
     public SuccessorA1(Integer varA1){
         super(varA1);
     }
@@ -14,4 +15,5 @@ public class SuccessorA1 extends AbstractClass{
     public void explore(){
         System.out.println("I am exploring");
     }
+
 }
