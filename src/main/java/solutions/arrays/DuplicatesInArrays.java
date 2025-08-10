@@ -1,6 +1,5 @@
 package solutions.arrays;
 
-import java.sql.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 
